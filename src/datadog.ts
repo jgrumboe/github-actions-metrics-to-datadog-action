@@ -20,6 +20,7 @@ export type PostMetricsResult = {
 };
 
 export const postMetrics = async (
+  datadogSite: string,
   apiKey: string,
   metrics: Metrics,
 ): Promise<PostMetricsResult> => {
@@ -32,7 +33,7 @@ export const postMetrics = async (
     );
   }
   const res = await fetch(
-    `https://api.datadoghq.eu/api/v1/series?api_key=${apiKey}`,
+    `https://${datadogSite}/api/v1/series?api_key=${apiKey}`,
     {
       method: 'post',
       headers: {

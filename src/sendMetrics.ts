@@ -64,7 +64,7 @@ const sendWorkflowMetrics = async ({
     ],
   };
 
-  return await postMetrics(inputs.datadogApiKey, metrics);
+  return await postMetrics(inputs.datadogSite, inputs.datadogApiKey, metrics);
 };
 
 export const getWorkflowTags = (
@@ -95,6 +95,7 @@ const sendOwnerMetrics = async ({
   const billingData = await getActionsBillingData({ context, octokit });
 
   return await postMetrics(
+    inputs.datadogSite,
     inputs.datadogApiKey,
     actionsBillingToMetrics({ now, tags, billingData }),
   );
@@ -173,6 +174,7 @@ const sendRepositoryWorkflowsBillingMetrics = async ({
   const tags = getRepositoryWorkflowsTags();
 
   return await postMetrics(
+    inputs.datadogSite,
     inputs.datadogApiKey,
     repositoryWorkflowsBillingMetrics({
       workflowsAndBillings,

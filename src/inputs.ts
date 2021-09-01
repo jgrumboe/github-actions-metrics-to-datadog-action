@@ -2,6 +2,7 @@ import { getInput } from '@actions/core';
 
 export interface Inputs {
   githubToken: string;
+  datadogSite: string;
   datadogApiKey: string;
   enableWorkflowMetrics: boolean;
   enableBillingMetrics: boolean;
@@ -10,6 +11,7 @@ export interface Inputs {
 
 export const getInputs = (): Inputs => {
   const githubToken = getInput('github-token');
+  const datadogSite = getInput('datadog-site') || 'api.datadoghq.com';
   const datadogApiKey = getInput('datadog-api-key', { required: true });
   const enableWorkflowMetrics =
     getInput('enable-workflow-metrics', { required: true }) === 'true';
@@ -22,6 +24,7 @@ export const getInputs = (): Inputs => {
 
   return {
     githubToken,
+    datadogSite,
     datadogApiKey,
     enableWorkflowMetrics,
     enableBillingMetrics: enableOwnerMetrics,

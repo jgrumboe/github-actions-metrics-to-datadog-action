@@ -52,13 +52,14 @@ jobs:
 
 ## Inputs
 
-| Name                                          | Required | Default | Description                                             |
-|-----------------------------------------------|----------|---------|---------------------------------------------------------|
-| `github-token`                                | `false`  |         | GitHub API token                                        |
-| `datadog-api-key`                             | `true`   |         | Datadog API key                                         |
-| `enable-workflow-metrics`                     | `true`   |         | Set "true" to send workflow metrics                     |
-| `enable-billing-metrics`                      | `true`   |         | Set "true" to send User/Organization billing metrics    |
-| `enable-repository-workflows-billing-metrics` | `true`   |         | Set "true" to send Repository Workflows billing metrics |
+| Name                                          | Required | Default             | Description                                             |
+|-----------------------------------------------|----------|---------------------|---------------------------------------------------------|
+| `github-token`                                | `false`  |                     | GitHub API token                                        |
+| `datadog-site`                                | `false`  | `api.datadoghq.com` | Datadog Site, specify "api.datadoghq.eu" for EU         |
+| `datadog-api-key`                             | `true`   |                     | Datadog API key                                         |
+| `enable-workflow-metrics`                     | `true`   |                     | Set "true" to send workflow metrics                     |
+| `enable-billing-metrics`                      | `true`   |                     | Set "true" to send User/Organization billing metrics    |
+| `enable-repository-workflows-billing-metrics` | `true`   |                     | Set "true" to send Repository Workflows billing metrics |
 
 ### Required scopes for `github-token`
 
