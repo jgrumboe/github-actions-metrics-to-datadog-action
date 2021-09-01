@@ -32,7 +32,7 @@ export const postMetrics = async (
     );
   }
   const res = await fetch(
-    `https://api.datadoghq.com/api/v1/series?api_key=${apiKey}`,
+    `https://api.datadoghq.eu/api/v1/series?api_key=${apiKey}`,
     {
       method: 'post',
       headers: {
