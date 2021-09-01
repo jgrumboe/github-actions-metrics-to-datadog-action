@@ -8,6 +8,10 @@ inputs:
   github-token:
     required: false
     description: 'GitHub API token'
+  datadog-site:
+    required: false
+    description: 'Datadog Site, set to "api.datadoghq.eu" for EU'
+    default: 'api.datadoghq.com'
   datadog-api-key:
     required: true
     description: 'Datadog API key'
